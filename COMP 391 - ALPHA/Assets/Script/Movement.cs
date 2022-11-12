@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     [Header("Collision")]
     public bool onGround = false;
     public float groundLine = 2;
+    bool facingRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +42,17 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("Right Key Pressed");
             Rb.AddForce(Vector2.right, ForceMode2D.Impulse);
+            if (!facingRight)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
         if (leftKey)
         {
             Debug.Log("Left Key Pressed");
             Rb.AddForce(Vector2.left, ForceMode2D.Impulse);
+            GetComponent<SpriteRenderer>().flipX = true;
+            facingRight = false;
         }
         if (space && onGround)
         {
@@ -74,5 +81,4 @@ public class Movement : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundLine);
     }
-
 }
