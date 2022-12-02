@@ -20,6 +20,8 @@ public class ParticleBurst : MonoBehaviour
             Destroy(sr);
             Invoke(nameof(DestroyObj), dur);
 
+            SoundManagerScript.PlaySound("coined");
+
         }
     }
 

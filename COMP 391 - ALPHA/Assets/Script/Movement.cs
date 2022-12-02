@@ -56,6 +56,7 @@ public class Movement : MonoBehaviour
         }
         if (space && onGround)
         {
+            SoundManagerScript.PlaySound("jump");
             Debug.Log("Space Key Pressed");
             Rb.AddForce(Vector2.up * 4, ForceMode2D.Impulse);
         }

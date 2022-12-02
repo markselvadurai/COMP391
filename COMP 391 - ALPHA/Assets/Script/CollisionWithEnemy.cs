@@ -11,6 +11,7 @@ public class CollisionWithEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Player hit");
+            SoundManagerScript.PlaySound("hit");
         }
     }
 }
