@@ -9,9 +9,7 @@ public class CoinCollect : MonoBehaviour
         SoundManagerScript.PlaySound("coined");
         if (collider2D.gameObject.CompareTag("Coin"))
         {
-            SoundManagerScript.PlaySound("coined");
             Destroy(collider2D.gameObject);
-            Debug.Log("DESTROYED");
         }
     }
 }
