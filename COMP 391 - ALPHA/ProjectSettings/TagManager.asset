@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Enemy
+  - Boundary
   layers:
   - Default
   - TransparentFX

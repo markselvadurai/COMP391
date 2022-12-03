@@ -14,4 +14,13 @@ public class CollisionWithEnemy : MonoBehaviour
             SoundManagerScript.PlaySound("hit");
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Boundary"))
+        {
+            Debug.Log("Player Respawned")
+            SoundManagerScript.PlaySound("")
+        }
+    }
 }
